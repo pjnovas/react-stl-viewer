@@ -26,6 +26,11 @@ class Paint {
     //Detector.addGetWebGLMessage();
     this.scene = new THREE.Scene();
     this.distance = 10000;
+    
+    let hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444);
+    hemiLight.position.set(this.lightX, this.lightY, this.lightZ);
+    this.scene.add(hemiLight);
+    
     let directionalLight = new THREE.DirectionalLight(this.lightColor);
     directionalLight.position.x = this.lightX;
     directionalLight.position.y = this.lightY;
