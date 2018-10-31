@@ -48,6 +48,11 @@ var Paint = function () {
       //Detector.addGetWebGLMessage();
       this.scene = new _Three2.default.Scene();
       this.distance = 10000;
+      
+      var hemiLight = new _Three2.default.HemisphereLight(0xffffff, 0x444444);
+      hemiLight.position.set(this.lightX, this.lightY, this.lightZ);
+      this.scene.add(hemiLight);
+      
       var directionalLight = new _Three2.default.DirectionalLight(this.lightColor);
       directionalLight.position.x = this.lightX;
       directionalLight.position.y = this.lightY;
